@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction function</title>
+</head>
+<body>
+   <h2>Construction function</h2>
+</body>
+<script>
+/*
+    // Creating Object By Normal Function
+
+     function createperson(n, m){
+        var obj = {};
+        obj.name = n;
+        obj.age = m; 
+        return obj;       
+    }
+    //  console.log(createperson("anubhav",56))
+     
+    // Creating Object By Array Function
+
+    var person = ["anubhav", "mahi"];
+    var age = [22,33];
+     
+    person.forEach(function(el,index){
+        var person1 = createperson(el,age[index])
+        // console.log(person1);
+    })
+    
+    // Creating Object By CONSTRUCTION Function
+     
+    function conperson(name , age){
+        this.name = name;
+        this.age = age;
+        this.greet = function(){
+            console.log(`hello ${this.name} of ${this.age} years old`);
+        }
+        this.Subham = function(city){
+            console.log(`hello ${this.name} of ${this.age} years old lives in ${city}`)
+        }
+    }
+    var conperson1 = new conperson("anubhav", 22);
+    var conperson2 = new conperson("Singh", 22);
+    console.log(conperson1);
+    console.log(conperson2);
+    conperson1.greet();
+    conperson1.Subham("Lucknow")
+
+*/
+function conperson(name , age){
+        this.name = name;
+        this.age = age;
+}
+var person1 = new conperson("Akash",12);
+var person2 = new conperson("anubhv",23);
+
+// yr tarika tab use kiya jab OBJECT ke andar greet function nhi tha
+
+function greet(city,country){
+    console.log(`hello ${this.name} of ${this.age} years old lives in ${city}, ${country}`);
+    this.greet = greet;
+
+}
+greet.call(person1, "lucknow" , 'Uttar Pradesh');
+
+// agar isi greet function ko object ke andar dikhana ho to ye tarika use kre
+
+
+
+person1.greet('bilgram', 'uttar pradesh')
+</script>
+</html>

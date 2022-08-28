@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akbar Anthony Amar</title>
+</head>
+<body>
+    <h2>Akbar Anthony Amar</h2>
+    <h2 id="h1"></h2>
+    <h2 id="h2"></h2>
+    <h2 id="h3"></h2>
+</body>
+<script>
+    function Person(name,skill,location){
+        this.name = name;
+        this.skill = skill;
+        this.location = location
+    }
+     var amar = new Person("Amar", "Singer", "Goa");
+     var akbar = new Person("Akbar", "Chef", "Mumbai");
+     var anthony = new Person("Anthony", "Magician", "Kashmir");     
+
+     console.log(amar);
+     console.log(akbar);
+     console.log(anthony);
+
+     function barrowSkill(borrow){
+        this.skill = borrow;
+     }
+
+     barrowSkill.call(amar, "Chef");
+     barrowSkill.call(akbar, "Magician");
+     barrowSkill.call(anthony, "Chef");
+
+     console.log(amar);
+     console.log(akbar); 
+     console.log(anthony);    
+
+</script>
+</html>
